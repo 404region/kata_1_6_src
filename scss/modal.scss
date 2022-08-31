@@ -1,0 +1,16 @@
+.modal {
+    display: none;
+
+    &-active {
+        @media (min-width: 320px)  and (max-width: 1439px){
+            display: block;
+            background-color: rgba(255, 255, 255, 0.7);
+            position: fixed;
+            z-index: 20;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}

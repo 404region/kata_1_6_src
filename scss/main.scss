@@ -1,0 +1,256 @@
+@import "mixins";
+@import "fonts";
+@import "vendor";
+@import "vars";
+@import "settings";
+@import "reset";
+@import "repair";
+@import "repair-types";
+@import "prices";
+@import "about_prices";
+@import "footer";
+@import "aside";
+@import "modal";
+@import "header";
+@import "page";
+@import "modal_window_form";
+
+/*
+Пример - убрать потом
+.header {
+  text-align: center;
+  & img {
+    width: 30%;
+  }
+}
+
+.welcome-title {
+  margin-top: 50px;
+  font-size: 6em;
+}
+*/
+/* Мои стили */
+.main {
+
+  @media (min-width: 1336px){
+    display: block;
+  }
+}
+.content {
+  @media (min-width: 768px) {
+    padding-bottom: 32px;
+  }
+}
+.content-header__title {
+  font-family: 'TT Lakes Bold';
+
+  font-size: 28px;
+  line-height: 40px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: -0.6px;
+}
+button {
+  border: none;
+  font: inherit;
+  background: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background-color: $background;
+}
+
+
+.line {
+  width: 2px;
+  height: 32px;
+  background: $background-light;
+  border-radius: 1px;
+}
+.menu-item {
+  height: 40px;
+  width: 40px;
+}
+.menu-btn {
+}
+.menu-btn--state-open {
+  background: url("../img/images/menu.svg");
+}
+.menu-btn--state-close {
+  border-radius: 100%;
+  background: url("../img/images/close.svg") center center no-repeat $pink;
+}
+.check-repair-status-btn {
+  background: url("../img/images/status.svg");
+}
+.submit{
+  align-self: flex-start;
+}
+.submit-btn {
+  background: url("../img/images/repair.svg");
+}
+.content-header {
+  padding: 18px 18px;
+  background: url("../img/images/highlight.svg") no-repeat 0 16px;
+}
+.block-header {
+}
+.block-header__container {
+}
+.block-header--background {
+  background: linear-gradient(270deg, $white 0%, $background 100%);
+  //transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.block-title {
+  font-family: 'TT Lakes Regular';
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: $gray;
+  padding: 16px 15px 0 16px;
+  min-height: 80px;
+}
+.content-header__title {
+  font-size: 28px;
+  line-height: 40px;
+  /* identical to box height, or 143% */
+  letter-spacing: -0.6px;
+  color:$dark-gray;
+}
+.services-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-left: 16px;
+  padding-top: 20px;
+
+  &__item {
+    flex: 0 0 auto;
+    font-size: 1em;
+    color: $gray;
+    padding: 8px 9px 8px 16px;
+    line-height: 1.5em;
+    letter-spacing: 0.2px;
+  
+    /* Фича=) бордер в цвет фона, чтобы не было скачка размеров элемента при наведении.
+    Я думала с этим справиться box-sizing: border-box, но почему то нет*/
+    border: 2px solid $background;
+    border-radius: 6px;
+  }
+}
+
+.services-list__item:hover {
+  border: 2px solid $blue-light;
+  border-radius: 6px;
+  background-color: $white;
+}
+.about {
+ /* padding: 24px 16px 16px 16px;*/
+  letter-spacing: 0.2px;
+  padding: 24px 16px 0 16px;
+
+  &__about-text {
+    /* Вроде я правильно посчитала размеры - почему шрифт не как на макете? */
+    /*
+    font-size: 0.875em;
+    line-height:  1.125em;
+    ладно, укажем в rem....
+    */
+  
+    font-size: 0.875rem;
+    line-height:  1.125rem;
+    color:$dark-gray;
+    overflow: hidden;
+  }
+
+  &__read-more-btn {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    background: url("../img/images/expand.svg") no-repeat 0 14px;
+    padding: 16px 0 0 32px;
+  }
+  
+  &__p--margin {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.content-image {
+  padding-top: 16px;
+  width: 320px;
+}
+.content {
+  /* padding: 32px 25px 40px 24px; */
+}
+
+.block-toggle-button {
+  display: none;
+  background: url("../img/images/expand.svg") no-repeat 24px 0px;
+  padding-left: 57px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+.reviews {
+  display: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.2px;
+  padding-left: 32px;
+  padding-top: 14.35px;
+}
+.reviews__btn {
+  color: $gray;
+}
+/* This applies from 0px to 600px */
+@media (max-width: 768px) {
+  .about__text-block {
+      max-height: 90px;
+      overflow: hidden;
+  }
+  .about__p--margin {
+      margin-bottom: 1.95rem;
+  }
+}
+
+/* This applies from 768px onwards */
+@media (min-width: 768px) {
+  .about__text-block {
+      margin-right: 48px;
+      max-width: 312px;
+  }
+  .content--flex {
+      display: flex;
+  }
+  .about__text-block {
+      max-height: 160px;
+  }
+  .content-image {
+      width: 360px;
+  }
+}
+
+/* This applies from 1120 onwards */
+@media (min-width: 1120px) {
+  .about__text-block {
+      max-width: 490px;
+      max-height: 160px;
+  }
+  .reviews {
+      display: block;
+  }
+  .content-image {
+      width: 531.35px;
+  }
+}
